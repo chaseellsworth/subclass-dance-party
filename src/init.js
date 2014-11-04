@@ -32,5 +32,13 @@ $(document).ready(function(){
 
   $(".lineUpDancersButton").on("click", lineupDancers);
 
+  $(".makeItRainButton").on("click", function(){
+    setInterval(function(){
+      var dollar = new DollarBill;
+      $('body').append(dollar.$node);
+      console.log('new bill');
+    }, 500)
+  })
+
 });
 

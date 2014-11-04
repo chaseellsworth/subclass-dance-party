@@ -23,3 +23,5 @@ Dancer.prototype.stop = function(){
   clearTimeout(this.timeOut);
 }
 
+
+

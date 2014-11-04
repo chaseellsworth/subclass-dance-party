@@ -3,7 +3,9 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
+  background-image: url('http://halfcoastal.com/wp-content/uploads/2011/08/Richard-Lund-hollywood-sign-at-night.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -24,4 +26,14 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.DollarBill {
+  position: absolute;
+  background-size: 60px;
+  background-image: url('bill.png');
+  height: 60px;
+  width: 60px;
+  background-repeat: no-repeat;
+  border: none;
 }

@@ -16,4 +16,17 @@ var lineupDancers = function(){
     }
   }, 5000);
 
+  // setTimeout(function(){
+  //   for(var i = 0; i < dancers.length; i++){
+  //     var currentDancer = dancers[i];
+  //     if (currentDancer.constructor === MovingDancer){
+  //       currentDancer.step();
+  //     }else{
+  //       currentDancer.$node.css(getRandomPosition());
+  //       currentDancer.step();
+  //     }
+  //   }
+  // }, 5000);
+
+
 };
