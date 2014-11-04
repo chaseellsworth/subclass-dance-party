@@ -37,7 +37,8 @@ $(document).ready(function(){
       var dollar = new DollarBill;
       $('body').append(dollar.$node);
       console.log('new bill');
-    }, 500)
+    }, 500);
+    $('body').css({"background-image": "url('http://tech.co/wp-content/uploads/2014/05/Miami1.jpg')"});
   })
 
 });
