@@ -43,3 +43,19 @@ $(document).ready(function(){
 
 });
 
+
+var collisionDetector = function () {
+  setInterval(function(){
+    for(var i = 0; i < window.dancers.length; i++){
+      var currentDancer = window.dancers[i];
+      if (currentDancer !== this){
+        console.log(Math.min(Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop),Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft)));
+        debugger;
+        if ((Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop) < 200) && (Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft) < 200)){
+          console.log("working");
+        }
+      }
+    }
+  }, 5);
+};
+collisionDetector();

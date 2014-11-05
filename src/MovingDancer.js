@@ -1,6 +1,6 @@
 var MovingDancer = function(top, left, timeBetweenSteps){
   Dancer.apply(this, arguments);
-  this.timeBetweenSteps = timeBetweenSteps;
+  this.timeBetweenSteps = 200;
   this.step();
 };
 
@@ -11,6 +11,7 @@ MovingDancer.prototype.step = function (){
   var newPosition = getRandomPosition();
   this.$node.animate(newPosition, this.timeBetweenSteps);
   this.$node.css('border-color', colors[randomNumber(colors.length)]);
+
 };
 
 MovingDancer.prototype.lineUp = function(){
