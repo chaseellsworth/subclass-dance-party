@@ -27,6 +27,18 @@ $(document).ready(function(){
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+    dancer.$node.hover(function(event){
+      console.log('working');
+      var styleSettings = {
+        'background-size': '100px' ,
+        'height': '100px',
+        'width': '100px',
+        'transform': 'rotate(90deg)'
+      };
+      $(event.currentTarget).css(styleSettings);
+    });
+
     window.dancers.push(dancer);
   });
 
@@ -39,7 +51,7 @@ $(document).ready(function(){
       console.log('new bill');
     }, 500);
     $('body').css({"background-image": "url('http://tech.co/wp-content/uploads/2014/05/Miami1.jpg')"});
-  })
+  });
 
 });
 
@@ -50,22 +62,14 @@ var collisionDetector = function () {
       for (j = 0; j< window.dancers.length;j++){
         if(i !== j){
           if(Math.abs(window.dancers[i].$node[0].offsetTop - window.dancers[j].$node[0].offsetLeft) < 20 && Math.abs(window.dancers[i].$node[0].offsetLeft - window.dancers[j].$node[0].offsetTop) < 20){
-            $(window.dancers[i].$node[0]).stop();
-            $(window.dancers[j].$node[0]).stop();
+            window.dancers[i].stop();
+            window.dancers[j].stop();
           }
         }
       }
     }
-
-
-
-
-      // if (currentDancer !== this){
-      //   // console.log(Math.min(Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop),Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft)));
-      //   if ((Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop) < 200) && (Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft) < 200)){
-      //     console.log("working");
-      //   }
-      // }
   }, 5);
 };
 collisionDetector();
+
+
