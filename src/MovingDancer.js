@@ -10,7 +10,7 @@ MovingDancer.prototype.step = function (){
   Dancer.prototype.step.call(this, this.timeBetweenSteps);
   var newPosition = getRandomPosition();
   this.$node.animate(newPosition, this.timeBetweenSteps);
-  this.$node.css('border-color', colors[randomNumber(colors.length)]);
+  // this.$node.css('border-color', colors[randomNumber(colors.length)]);
 
 };
 

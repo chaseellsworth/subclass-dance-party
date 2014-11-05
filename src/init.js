@@ -47,15 +47,25 @@ $(document).ready(function(){
 var collisionDetector = function () {
   setInterval(function(){
     for(var i = 0; i < window.dancers.length; i++){
-      var currentDancer = window.dancers[i];
-      if (currentDancer !== this){
-        console.log(Math.min(Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop),Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft)));
-        debugger;
-        if ((Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop) < 200) && (Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft) < 200)){
-          console.log("working");
+      for (j = 0; j< window.dancers.length;j++){
+        if(i !== j){
+          if(Math.abs(window.dancers[i].$node[0].offsetTop - window.dancers[j].$node[0].offsetLeft) < 20 && Math.abs(window.dancers[i].$node[0].offsetLeft - window.dancers[j].$node[0].offsetTop) < 20){
+            $(window.dancers[i].$node[0]).stop();
+            $(window.dancers[j].$node[0]).stop();
+          }
         }
       }
     }
+
+
+
+
+      // if (currentDancer !== this){
+      //   // console.log(Math.min(Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop),Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft)));
+      //   if ((Math.abs(currentDancer.$node[0].offsetTop - this.$node[0].offsetTop) < 200) && (Math.abs(currentDancer.$node[0].offsetLeft - this.$node[0].offsetLeft) < 200)){
+      //     console.log("working");
+      //   }
+      // }
   }, 5);
 };
 collisionDetector();
